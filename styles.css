@@ -3,6 +3,11 @@ body{
     background-repeat: none;
     background-position:inherit;
     background-size: cover;
+    font-family: 'VT323', monospace;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
 }
 
 #starters{
