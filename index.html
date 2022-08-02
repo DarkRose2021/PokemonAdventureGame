@@ -4,15 +4,30 @@
         <title>HomePage</title>
         <link rel="stylesheet" href="styles.css">
         <script src="myscripts.js"></script> 
+        <!--
+            <each path, add encounter pokemon>
+            Grass: Snivy ->
+            Fire: Scorbunny ->
+            Water: Poplio ->
+        -->
     </head>
 
     <body>
-        <h1></h1>
-        <div>
+        <h1>Welcome to ______ Regin!</h1>
+        <form>
+            <label for="PlayerName">What was your name again?</label><br>
+            <input type="text" id="PlayerName" name="PlayerName"><br>
+            <input type="submit" value="Enter">
+        </form>
+
+        <div id="starters">
+            <h1>Choose a starter:</h1>
+
+            <a href="Poplio/poplio.html"><button><img src="assets/Poplio.png"></button></a>
+
+            <a href="Scorbunny/scorbunny.html"><button><img src="assets/scorbunny.png"></button></a>
             
-        </div>
-        <div>
-            
+            <a href="Snivy/snivy.html"><button><img src="assets/snivy.png"></button></a>
         </div>
     </body>
 </html>
