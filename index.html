@@ -3,7 +3,7 @@
     <head>
         <title>HomePage</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="myscripts.js"></script> 
+        <script src="script.js" defer></script> 
         <!--
             <each path, add encounter pokemon>
             Grass: Snivy ->
@@ -13,12 +13,14 @@
     </head>
 
     <body>
-        <h1>Welcome to ______ Regin!</h1>
-        <form>
-            <label for="PlayerName">What was your name again?</label><br>
-            <input type="text" id="PlayerName" name="PlayerName"><br>
-            <input type="submit" value="Enter">
-        </form>
+        <div id="welcome">
+            <h1>Welcome to ______ Regin!</h1>
+            <form id="form" method="post">
+                <label for="PlayerName">What was your name again?</label><br>
+                <input type="text" id="PlayerName" name="PlayerName" required><br>
+                <input type="submit" id="submit" value="Enter">
+            </form>
+        </div>
 
         <div id="starters">
             <h1>Choose a starter:</h1>
