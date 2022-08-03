@@ -1,4 +1,9 @@
 body{
     color: #F1FAEE;
     background-color: #457B9D;
+    font-family: 'VT323', monospace;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
 }
