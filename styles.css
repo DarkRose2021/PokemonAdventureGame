@@ -1,21 +1,9 @@
 body{
-    background-image: url("assets/background.png");
-    background-repeat: none;
-    background-position:inherit;
-    background-size: cover;
+    color: #F1FAEE;
+    background-color: #457B9D;
     font-family: 'VT323', monospace;
 }
 
 h1{
     font-family: 'Press Start 2P', cursive;
-}
-
-#starters{
-    /* hides starters when page is opened/refreshed*/
-    display: none;
-}
-
-#starters img, button{
-    max-width: 200px;
-    margin-left: 2%;
 }
