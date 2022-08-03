@@ -1,6 +1,5 @@
 body{
-    background-image: url("assets/background.png");
-    background-repeat: none;
+    /*background-image: url("assets/background.png");*/    background-repeat: none;
     background-position:inherit;
     background-size: cover;
     font-family: 'VT323', monospace;
@@ -20,10 +19,20 @@ h1{
     margin-left: 2%;
 }
 
+#profOak{
+    display: flexbox;
+    float: right;
+    margin-left: 50%;
+}
+
+#starterSelection{
+    display: none;
+}
+
 form{
     font-size: 30px;
-    margin-left: 2%;
-    margin-right: 30%;
+    /* margin-left: 2%;
+    margin-right: 30%;  */
     padding-bottom: 2%;
     font-family: 'VT323', monospace;
     text-align: center;
@@ -45,14 +54,9 @@ input[type=text]{
     border: none;
     padding: .7% 1.5% .7% 1.5%;
     margin-top: .7%;
-    margin-left: 43%;
+    /* margin-left: 43%; */
     cursor: pointer;
     opacity: 1;
     transition: 0.3s;
     
-}
-
-#welcome{
-    margin-right: 50%;
-    padding-bottom: 1%;
 }

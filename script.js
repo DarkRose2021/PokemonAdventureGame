@@ -8,6 +8,17 @@ const playerName = document.getElementById("PlayerName");
 const submit = document.getElementById("submit");
 var Name;
 
+//starterbtn ids
+const poplio = document.getElementById("poplio");
+const scorbunny = document.getElementById("scorbunny");
+const snivy = document.getElementById("snivy");
+
+const starterInfoDiv = document.getElementById("starterSelection");
+const starterInfo = document.getElementById("starterInfo");
+const btnChoose = document.getElementById("choose");
+
+const h1 = document.getElementById("gameTxtTitle");
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     if(playerName.value != ''){
@@ -15,7 +26,44 @@ form.addEventListener("submit", (event) => {
         localStorage.setItem("Name", playerName.value)
         welcome.style.display = "none";
         starters.style.display = "block";
-        //change map to the right map, higher quality img recommended
-        document.body.style.backgroundImage = `url(assets/map.png)`;
     }
+});
+
+poplio.addEventListener("click",() => {
+    starterInfoDiv.style.display = "block";
+    //change
+    starterInfo.innerHTML = "Poplio info text";
+    btnChoose.addEventListener("click", () =>{
+        h1.innerHTML = "You chose Poplio";
+        starterInfoDiv.style.display = "none";
+        starters.style.display = "none";
+        document.body.style.backgroundColor = "#457B9D";
+        document.body.style.color = "#F1FAEE";
+    });
+});
+
+scorbunny.addEventListener("click", () =>{
+    starterInfoDiv.style.display = "block";
+    //change
+    starterInfo.innerHTML = "scorbunny info text";
+    btnChoose.addEventListener("click", () =>{
+        h1.innerHTML = "You chose Scorbunny";
+        starterInfoDiv.style.display = "none";
+        starters.style.display = "none";
+        document.body.style.backgroundColor = "#C24B57";
+        document.body.style.color = "#F1FAEE";
+    });
+});
+
+snivy.addEventListener("click", () =>{
+    starterInfoDiv.style.display = "block";
+    //change
+    starterInfo.innerHTML = "snivy info text";
+    btnChoose.addEventListener("click", () =>{
+        h1.innerHTML = "You chose Snivy";
+        starterInfoDiv.style.display = "none";
+        starters.style.display = "none";
+        document.body.style.backgroundColor = "#75C45B";
+        document.body.style.color = "#F1FAEE";
+    });
 });
