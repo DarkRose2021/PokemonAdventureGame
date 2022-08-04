@@ -43,6 +43,7 @@ poplio.addEventListener("click",() => {
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#457B9D";
+        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
@@ -58,6 +59,7 @@ scorbunny.addEventListener("click", () =>{
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#C24B57";
+        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
@@ -73,6 +75,7 @@ snivy.addEventListener("click", () =>{
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#75C45B";
+        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
