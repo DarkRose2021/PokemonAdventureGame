@@ -9,7 +9,7 @@ const submit = document.getElementById("submit");
 var Name;
 
 //starterbtn ids
-const poplio = document.getElementById("poplio");
+const popplio = document.getElementById("popplio");
 const scorbunny = document.getElementById("scorbunny");
 const snivy = document.getElementById("snivy");
 
@@ -32,18 +32,17 @@ form.addEventListener("submit", (event) => {
     }
 });
 
-poplio.addEventListener("click",() => {
+popplio.addEventListener("click",() => {
     starterInfoDiv.style.display = "block";
     //change
-    starterInfo.innerHTML = "Poplio info text";
+    starterInfo.innerHTML = "Popplio: The Sea Lion Pokemon, a Water Type";
 
     btnChoose.addEventListener("click", () =>{
-        h1.innerHTML = "You chose Poplio";
+        h1.innerHTML = "You choose Popplio";
         starterInfoDiv.style.display = "none";
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#457B9D";
-        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
@@ -51,15 +50,14 @@ poplio.addEventListener("click",() => {
 scorbunny.addEventListener("click", () =>{
     starterInfoDiv.style.display = "block";
     //change
-    starterInfo.innerHTML = "scorbunny info text";
+    starterInfo.innerHTML = "Scorbunny: The Rabbit Pokemon, a Fire Type";
 
     btnChoose.addEventListener("click", () =>{
-        h1.innerHTML = "You chose Scorbunny";
+        h1.innerHTML = "You choose Scorbunny";
         starterInfoDiv.style.display = "none";
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#C24B57";
-        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
@@ -67,15 +65,14 @@ scorbunny.addEventListener("click", () =>{
 snivy.addEventListener("click", () =>{
     starterInfoDiv.style.display = "block";
     //change
-    starterInfo.innerHTML = "snivy info text";
+    starterInfo.innerHTML = "Snivy: The Grass Snake Pokemon, a Grass Type";
 
     btnChoose.addEventListener("click", () =>{
-        h1.innerHTML = "You chose Snivy";
+        h1.innerHTML = "You choose Snivy";
         starterInfoDiv.style.display = "none";
         starters.style.display = "none";
         storyDiv.style.display = "block";
         document.body.style.backgroundColor = "#75C45B";
-        document.body.style.backgroundImage = "none";
         document.body.style.color = "#F1FAEE";
     });
 });
