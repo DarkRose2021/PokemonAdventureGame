@@ -59,21 +59,21 @@ popplio.addEventListener("click",() => {
 
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Popplio";
+        story.innerHTML = "Popplio was added to your party!";
 
         starterInfoDiv.style.display = "none";
         starters.style.display = "none";
         storyDiv.style.display = "block";
         btnContinue.style.backgroundColor = "#2B556F";
+        story.style.backgroundColor = "#2B556F";
 
         //party
         party.style.display = "block";
         party.style.backgroundColor = "#2B556F";
         pImg1.src = `assets/Popliopixel.png`;
         pImg1.title = "Popplio";
-
         document.body.style.backgroundColor = "#457B9D";
-        document.body.style.backgroundImage = "none";
-        document.body.style.color = "#F1FAEE";
+        showTxtAndChangeBackground();
     });
 });
 
@@ -85,14 +85,17 @@ scorbunny.addEventListener("click", () =>{
 
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Scorbunny";
+        story.innerHTML = "Scorbunny was added to your party!";
         btnContinue.style.backgroundColor = "#8E2731";
 
         //party
         party.style.backgroundColor = "#8E2731";
+        story.style.backgroundColor = "#8E2731";
         pImg1.src = `assets/scorbunnypixel.png`;
         pImg1.title = "Scorbunny";
 
         document.body.style.backgroundColor = "#C24B57";
+        showTxtAndChangeBackground();
     });
 });
 
@@ -111,6 +114,7 @@ snivy.addEventListener("click", () =>{
         btnContinue.style.backgroundColor = "#57A03F";
         document.body.style.backgroundColor = "#75C45B";
         party.style.backgroundColor = "#57A03F";
+        story.style.backgroundColor = "#57A03F";
 
         //party imgs
         pImg1.src = `assets/snivypixel.png`;
