@@ -18,10 +18,13 @@ const starterInfo = document.getElementById("starterInfo");
 const btnChoose = document.getElementById("choose");
 
 const h1 = document.getElementById("gameTxtTitle");
-const img = document.getElementById("routeImg");
+const routeImg = document.getElementById("routeImg");
 const storyDiv = document.getElementById("storyTxtDiv");
 const story = document.getElementById("storytxt");
-const btnContinue = document.getElementById("Continue");
+const btnFirstEncounter = document.getElementById("firstEncounter");
+const btnfirstTeamEncounter = document.getElementById("firstTeamEncounter");
+const btnsecEncounter = document.getElementById("secEncounter");
+const btnfirstGym = document.getElementById("firstGym");
 
 //Encounter ids
 const encounterDiv = document.getElementById("encounter");
@@ -60,20 +63,11 @@ popplio.addEventListener("click",() => {
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Popplio";
         story.innerHTML = "Popplio was added to your party!";
-
-        starterInfoDiv.style.display = "none";
-        starters.style.display = "none";
-        storyDiv.style.display = "block";
-        btnContinue.style.backgroundColor = "#2B556F";
-        story.style.backgroundColor = "#2B556F";
-
-        //party
-        party.style.display = "block";
-        party.style.backgroundColor = "#2B556F";
         pImg1.src = `assets/Popliopixel.png`;
         pImg1.title = "Popplio";
         document.body.style.backgroundColor = "#457B9D";
-        showTxtAndChangeBackground();
+        showTxtAndChangeBackground("#2B556F");
+        btnFirstEncounter.style.display = "block";
     });
 });
 
@@ -86,16 +80,11 @@ scorbunny.addEventListener("click", () =>{
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Scorbunny";
         story.innerHTML = "Scorbunny was added to your party!";
-        btnContinue.style.backgroundColor = "#8E2731";
-
-        //party
-        party.style.backgroundColor = "#8E2731";
-        story.style.backgroundColor = "#8E2731";
         pImg1.src = `assets/scorbunnypixel.png`;
         pImg1.title = "Scorbunny";
-
         document.body.style.backgroundColor = "#C24B57";
-        showTxtAndChangeBackground();
+        showTxtAndChangeBackground("#8E2731");
+        btnFirstEncounter.style.display = "block";
     });
 });
 
@@ -109,26 +98,91 @@ snivy.addEventListener("click", () =>{
         //changing text
         h1.innerHTML = "You choose Snivy";
         story.innerHTML = "Snivy was added to your party!";
-
-        //changing colors to green
-        btnContinue.style.backgroundColor = "#57A03F";
-        document.body.style.backgroundColor = "#75C45B";
-        party.style.backgroundColor = "#57A03F";
-        story.style.backgroundColor = "#57A03F";
-
-        //party imgs
         pImg1.src = `assets/snivypixel.png`;
         pImg1.title = "Snivy";
-        showTxtAndChangeBackground();
+        document.body.style.backgroundColor = "#75C45B";
+        showTxtAndChangeBackground("#57A03F");
+        btnFirstEncounter.style.display = "block";
     });
 });
 
-function keep(pokename){
-
+//add Switch
+function firstEncounter(){
+    //first encounter
+    h1.innerHTML = "You encountered a Lillipup!";
+    routeImg.src = `assets/lillipup.png`;
+    story.innerHTML = "Story text here";
+    pImg2.src = `assets/lillipuppixel.png`;
+    pImg2.title = "Lillipup";
+    btnFirstEncounter.style.display = "none";
+    btnfirstTeamEncounter.style.display = "block";
 }
 
-function leave(pokename){
+function firstTeamEncounter(){
+    routeImg.src = `assets/accumula_town.png`;
+    h1.innerHTML = "You there!";
+    story.innerHTML = "Story text here";
+    btnfirstTeamEncounter.style.display = "none";
+    btnsecEncounter.style.display = "block";
+}
 
+function secEncounter(){
+    encounter("Purrloin");
+    btnsecEncounter.style.display = "none";
+    btnfirstGym.style.display = "block";
+}
+
+function firstGym(){
+    h1.innerHTML = "Gym"
+    if(pImg3.title = ""){
+        story.innerHTML ="only 2 pokemon";
+    }else if(pImg3.title != ""){
+        story.innerHTML = "only 3 pokemon"
+    }
+}
+
+
+
+function keep(){
+    switch(pImg1.title){
+        case "Snivy":
+            if(pImg2.title != "" && pImg3.title == ""){
+                pokename = "Purrloin";
+                btnKeep.style.display = "none";
+                btnLeave.style.display = "none";
+                pImg3.src = `assets/snivypixel.png`
+                
+            }
+            break;
+        case "Scorbunny":
+            break;
+        case "Popplio":
+            break;
+    }
+
+    h1.innerHTML = "Insert text here";
+    story.innerHTML = pokename + " was added to your party!";
+    pImg3.title = pokename;
+}
+
+
+function leave(){
+    switch(pImg1.title){
+        case "Snivy":
+            if(pImg2.title != "" || pImg3 == ""){
+                pokename = "Purrloin";
+                btnKeep.style.display = "none";
+                btnLeave.style.display = "none";
+            }
+            break;
+        case "Scorbunny":
+            break;
+        case "Popplio":
+            break;
+    }
+
+    h1.innerHTML = "Insert text here";
+    story.innerHTML = "You left "+ pokename;
 }
 
 function box(pokename){
@@ -136,15 +190,32 @@ function box(pokename){
 }
 
 function encounter(pokename){
-    
+    h1.innerText = "You encountered " + pokename;
+    encounterDiv.style.display = "block";
+    btnKeep.style.display = "block";
+    btnLeave.style.display = "block";
 }
 
-function showTxtAndChangeBackground(){
+function showTxtAndChangeBackground(color){
     starterInfoDiv.style.display = "none";
     starters.style.display = "none";
     storyDiv.style.display = "block";
-    img.style.display = "none";
+    routeImg.style.display = "none";
     document.body.style.backgroundImage = "none";
     document.body.style.color = "#F1FAEE";
     party.style.display = "block";
+    party.style.backgroundColor = color;
+    story.style.backgroundColor = color;
+    btnAdd.style.backgroundColor = color;
+    btnBox.style.backgroundColor = color;
+    btnLeave.style.backgroundColor = color;
+    btnKeep.style.backgroundColor = color;
+    btnFirstEncounter.style.backgroundColor = color;
+    btnfirstTeamEncounter.style.backgroundColor = color;
+    btnsecEncounter.style.backgroundColor = color;
+    btnfirstGym.style.backgroundColor = color;
+    btnFirstEncounter.style.display = "none";
+    btnfirstTeamEncounter.style.display = "none";
+    btnsecEncounter.style.display = "none";
+    btnfirstGym.style.display = "none";
 }

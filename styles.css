@@ -1,5 +1,5 @@
 body{
-    background-image: url("assets/map.png");    
+    background-image: url("assets/map.jpg");    
     background-repeat: none;
     background-position:inherit;
     background-size: cover;
@@ -43,11 +43,11 @@ button{
     font-size: 20px;
 }
 
-#Continue{
+.Continue{
     font-family: 'VT323', monospace;
     font-size: 20px;
     color: #F1FAEE;
-    display: block;
+    display: none;
     text-align: center;
     border: none;
     padding: .7% 1.5% .7% 1.5%;
@@ -146,7 +146,20 @@ input[type=text]{
 
 #gameTxtTitle{
     margin-top: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
+    /* margin-left: 40%;
+    margin-right: 40%; */
 }
 
+#encounter button{
+    font-family: 'VT323', monospace;
+    color: #F1FAEE;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    border: none;
+    padding: .7% 1.5% .7% 1.5%;
+    margin-top: .7%;
+    margin-left: 43%;
+    opacity: 1;
+    transition: 0.3s;
+}

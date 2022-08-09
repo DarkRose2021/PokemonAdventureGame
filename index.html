@@ -48,7 +48,7 @@
             <p id="starterInfo"></p>
             <button id="choose">Choose </button>
         </div>
-        
+
         <!--party display-->
         <div id="partyDiv">
             <div id="partyImg">
@@ -67,14 +67,17 @@
         <div id="storyTxtDiv">
             <img id="routeImg">
             <p id="storytxt"></p>
-            <button id="Continue">Continue</button>
+            <button class="Continue" id="firstEncounter" onclick="firstEncounter()">Continue</button>
+            <button class="Continue" id="firstTeamEncounter" onclick="firstTeamEncounter()">Continue</button>
+            <button class="Continue" id="secEncounter" onclick="secEncounter()">Continue</button>
+            <button class="Continue" id="firstGym" onclick="firstGym()">Continue</button>
         </div>
 
         <!--Encounter buttons-->
         <div id="encounter">
             <p id="encoutnerTxt"></p>
-            <button id="keep">Catch</button>
-            <button id="leave">Leave</button>
+            <button id="keep" onclick="keep()">Catch</button>
+            <button id="leave" onclick="leave()">Leave</button>
             <div id="partyFullDiv">
                 <button id="Add">Add to Party</button>
                 <button id="box">Add to Box</button>
