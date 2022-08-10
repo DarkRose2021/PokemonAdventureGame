@@ -1,6 +1,10 @@
 //div ids
 const welcome = document.getElementById("welcome");
 const starters = document.getElementById("starters");
+const start = document.getElementById("start");
+const btnStart = document.getElementById("btnStart");
+const btnStart2 = document.getElementById("btnStart2");
+const startTxt = document.getElementById("starttxt");
 
 //form ids
 const form = document.getElementById("form");
@@ -43,6 +47,19 @@ const pImg3 = document.getElementById("party3");
 const pImg4 = document.getElementById("party4");
 const pImg5 = document.getElementById("party5");
 const pImg6 = document.getElementById("party6");
+
+function beginning(){
+    startTxt.innerHTML = `You suddenly hear a voice calling your name, yelling about going to Professor Oak. You startle out of bed, falling onto the hard-wood floor. Of course! How could you forget!? You yet your blanket back onto the bed and throw on some clothes before rushing out of the house, absolutely booking it to the professor’s lab. This is it! The start of your adventure! Who knows what it has in store!`;
+    btnStart.style.display = "none";
+    btnStart2.style.display = "block";
+}
+
+function getname(){
+    document.body.style.backgroundImage = `url(assets/map.jpg)`;
+    welcome.style.display = "block";
+    start.style.display = "none";
+}
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -109,11 +126,20 @@ snivy.addEventListener("click", () =>{
 //add Switch
 function firstEncounter(){
     //first encounter
-    h1.innerHTML = "You encountered a Lillipup!";
-    routeImg.src = `assets/lillipup.png`;
-    story.innerHTML = "Story text here";
-    pImg2.src = `assets/lillipuppixel.png`;
-    pImg2.title = "Lillipup";
+    switch(pImg1.title){
+        case "Snivy":
+            pokename = "Lillipup";
+            routeImg.src = `assets/lillipup.png`;
+            story.innerHTML = "Story text here";
+            pImg2.src = `assets/lillipuppixel.png`;
+            pImg2.title = "Lillipup";
+            break;
+        case "Scorbunny":
+            break;
+        case "Popplio":
+            break;
+    }
+    h1.innerHTML = "You encountered a "+ pokename+ "!";
     btnFirstEncounter.style.display = "none";
     btnfirstTeamEncounter.style.display = "block";
 }
@@ -128,16 +154,16 @@ function firstTeamEncounter(){
 
 function secEncounter(){
     encounter("Purrloin");
+    routeImg.src = `assets/purloin.png`
     btnsecEncounter.style.display = "none";
-    btnfirstGym.style.display = "block";
 }
 
 function firstGym(){
     h1.innerHTML = "Gym"
-    if(pImg3.title = ""){
-        story.innerHTML ="only 2 pokemon";
+    if(pImg3.title == ""){
+        story.innerHTML = "only 2 pokemon";
     }else if(pImg3.title != ""){
-        story.innerHTML = "only 3 pokemon"
+        story.innerHTML = "only 3 pokemon";
     }
 }
 
@@ -150,7 +176,8 @@ function keep(){
                 pokename = "Purrloin";
                 btnKeep.style.display = "none";
                 btnLeave.style.display = "none";
-                pImg3.src = `assets/snivypixel.png`
+                pImg3.src = `assets/purloinpixel.png`;
+                pImg3.title = "Purrloin";
                 
             }
             break;
@@ -162,7 +189,7 @@ function keep(){
 
     h1.innerHTML = "Insert text here";
     story.innerHTML = pokename + " was added to your party!";
-    pImg3.title = pokename;
+    btnfirstGym.style.display = "block";
 }
 
 
@@ -183,6 +210,7 @@ function leave(){
 
     h1.innerHTML = "Insert text here";
     story.innerHTML = "You left "+ pokename;
+    btnfirstGym.style.display = "block";
 }
 
 function box(pokename){
@@ -192,15 +220,16 @@ function box(pokename){
 function encounter(pokename){
     h1.innerText = "You encountered " + pokename;
     encounterDiv.style.display = "block";
-    btnKeep.style.display = "block";
+    btnKeep.style.display = "flexbox";
     btnLeave.style.display = "block";
+    btnfirstGym.style.display = "none";
 }
 
 function showTxtAndChangeBackground(color){
     starterInfoDiv.style.display = "none";
     starters.style.display = "none";
     storyDiv.style.display = "block";
-    routeImg.style.display = "none";
+    routeImg.style.display = "block";
     document.body.style.backgroundImage = "none";
     document.body.style.color = "#F1FAEE";
     party.style.display = "block";

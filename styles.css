@@ -1,5 +1,5 @@
 body{
-    background-image: url("assets/map.jpg");    
+    background-color: black;    
     background-repeat: none;
     background-position:inherit;
     background-size: cover;
@@ -11,7 +11,7 @@ h1{
     text-align: center;
 }
 
-#starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv{
+#starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv, #welcome, #btnStart2{
     /* hides other divs when page is opened/refreshed*/
     display: none;
 }
@@ -31,8 +31,8 @@ button{
 }
 
 #routeImg{
-    margin-left: 37%;
-    max-width: 25%;
+    margin-left: 40%;
+    max-width: 15%;
 }
 
 #storytxt{
@@ -106,7 +106,7 @@ input[type=text]{
     border: none;
 }
 
-#submit{
+#submit, #choose,#encounter button{
     font-family: 'VT323', monospace;
     font-size: 20px;
     background-color: #6C6C6C;
@@ -129,37 +129,19 @@ input[type=text]{
     padding: .5%;
 }
 
-#choose{
-    font-family: 'VT323', monospace;
-    font-size: 20px;
-    background-color: #6C6C6C;
-    color: black;
-    display: block;
-    text-align: center;
-    border: none;
-    padding: .7% 1.5% .7% 1.5%;
-    margin-top: .7%;
-    margin-left: 43%;
-    opacity: 1;
-    transition: 0.3s;
-}
-
 #gameTxtTitle{
     margin-top: 1%;
-    /* margin-left: 40%;
-    margin-right: 40%; */
 }
 
 #encounter button{
-    font-family: 'VT323', monospace;
     color: #F1FAEE;
-    font-size: 20px;
-    display: block;
-    text-align: center;
-    border: none;
-    padding: .7% 1.5% .7% 1.5%;
-    margin-top: .7%;
-    margin-left: 43%;
-    opacity: 1;
-    transition: 0.3s;
+}
+
+#keep{
+    display: "flexbox";
+    flex-direction: row;
+}
+
+#start{
+    color: #F1FAEE;
 }
