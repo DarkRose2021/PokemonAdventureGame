@@ -11,6 +11,10 @@ h1{
     text-align: center;
 }
 
+#backgroundcolor{
+    background-color: #6C6C6C;
+}
+
 #starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv, #welcome, #btnStart2{
     /* hides other divs when page is opened/refreshed*/
     display: none;
@@ -133,7 +137,7 @@ input[type=text]{
     margin-top: 1%;
 }
 
-#encounter button{
+#encounter button, #start button{
     color: #F1FAEE;
 }
 
@@ -142,6 +146,21 @@ input[type=text]{
     flex-direction: row;
 }
 
-#start{
+#starttxt{
     color: #F1FAEE;
+    font-size: 30px;
+    text-align: center;
+}
+
+#start button{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    background-color: #6C6C6C;
+    text-align: center;
+    border: none;
+    padding: .7% 1.5% .7% 1.5%;
+    margin-top: .7%;
+    margin-left: 43%;
+    opacity: 1;
+    transition: 0.3s;
 }

@@ -226,6 +226,7 @@ function encounter(pokename){
 }
 
 function showTxtAndChangeBackground(color){
+    h1.style.backgroundColor = "none";
     starterInfoDiv.style.display = "none";
     starters.style.display = "none";
     storyDiv.style.display = "block";

@@ -19,7 +19,7 @@
     </head>
 
     <body>
-        <!--Welcome + Get player's name-->
+        <!--Intro Text-->
         <div id="start">
             <p id="starttxt">You wake up in total darkness, groggy from sleep. 
                 It’s peaceful here, in your half-asleep state. And yet, you feel as though you have something to do today. But what…? 
@@ -30,8 +30,11 @@
             <button id="btnStart2" onclick="getname()">Continue</button>
         </div>
 
+        <!--Welcome + Get player's name-->
         <div id="welcome">
-            <h1 id="webpagetxt">Welcome to ______ Region!</h1>
+            <div id="h1div"> 
+                <h1 id="webpagetxt">Welcome to ______ Region!</h1>
+            </div>
             <img src="assets/profOak.png" id="profOak">
             <div id="formdiv">
                 <form id="form" method="post">
@@ -44,7 +47,7 @@
         
         <!--Starters-->
         <div id="starters">
-            <h1>Choose a starter:</h1>
+            <h1 id="backgroundcolor">You are presented with three young Pokémon. Popplio, Scorbunny, and Snivy. All three look eagerly at you. You make your decision carefully.</h1>
 
             <div id="img">
                 <button id="popplio"><img src="assets/Poplio.png"></button>
