@@ -114,7 +114,7 @@ snivy.addEventListener("click", () =>{
     btnChoose.addEventListener("click", () =>{
         //changing text
         h1.innerHTML = "You choose Snivy";
-        story.innerHTML = "Snivy was added to your party!";
+        story.innerHTML = `The little grass Pokémon shyly approaches you. You slowly reach your hand out, a Pokémon ball laying upon it. You let the snivy make the first move. Snivy was added to your party!`;
         pImg1.src = `assets/snivypixel.png`;
         pImg1.title = "Snivy";
         document.body.style.backgroundColor = "#75C45B";
@@ -129,7 +129,7 @@ function firstEncounter(){
         case "Snivy":
             pokename = "Lillipup";
             routeImg.src = `assets/lillipup.png`;
-            story.innerHTML = "Story text here";
+            story.innerHTML = `While walking along route 1 you hear a rambunctious barking. A Lillipup runs out in front of you, causing you to fall backwards. The Lillipup continues to run around, barking, before running up to your face. It’s a little ball of energy and seems to be concerned that you’re on the ground. You pet the dog Pokémon and slowly raise from the ground. The pup circles you, barking, making you smile. It seems to want to go with you. You smile, presenting a poke-ball to the little fella. It boops it with his nose, disappearing into the ball. Lillipup joins your team!`;
             pImg2.src = `assets/lillipuppixel.png`;
             pImg2.title = "Lillipup";
             break;
@@ -187,7 +187,7 @@ function secEncounter(){
 
 function firstGym(){
     h1.innerHTML = "Gym";
-    
+
     switch(pImg1.title){
         case "Snivy":
             routeImg.src = `assets/SnivyGym1.png`;
