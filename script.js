@@ -49,7 +49,7 @@ const pImg5 = document.getElementById("party5");
 const pImg6 = document.getElementById("party6");
 
 function beginning(){
-    startTxt.innerHTML = `You suddenly hear a voice calling your name, yelling about going to Professor Oak. You startle out of bed, falling onto the hard-wood floor. Of course! How could you forget!? You yet your blanket back onto the bed and throw on some clothes before rushing out of the house, absolutely booking it to the professor’s lab. This is it! The start of your adventure! Who knows what it has in store!`;
+    startTxt.innerHTML = `You suddenly hear a voice calling your name, yelling about going to Professor Oak. You startle out of bed, falling onto the hard-wood floor. Of course! How could you forget!? You yeet your blanket back onto the bed and throw on some clothes before rushing out of the house, absolutely booking it to the professor’s lab. This is it! The start of your adventure! Who knows what it has in store!`;
     btnStart.style.display = "none";
     btnStart2.style.display = "block";
 }
@@ -123,7 +123,6 @@ snivy.addEventListener("click", () =>{
     });
 });
 
-//add Switch
 function firstEncounter(){
     //first encounter
     switch(pImg1.title){
@@ -135,8 +134,18 @@ function firstEncounter(){
             pImg2.title = "Lillipup";
             break;
         case "Scorbunny":
+            pokename = "";
+            routeImg.src = `assets/.png`;
+            story.innerHTML = "Story text here";
+            pImg2.src = `assets/.png`;
+            pImg2.title = "";
             break;
         case "Popplio":
+            pokename = "";
+            routeImg.src = `assets/.png`;
+            story.innerHTML = "Story text here";
+            pImg2.src = `assets/.png`;
+            pImg2.title = "";
             break;
     }
     h1.innerHTML = "You encountered a "+ pokename+ "!";
@@ -153,17 +162,57 @@ function firstTeamEncounter(){
 }
 
 function secEncounter(){
-    encounter("Purrloin");
-    routeImg.src = `assets/purloin.png`
+    switch(pImg1.title){
+        case "Snivy":
+            pokename = "Purrloin";
+            routeImg.src = `assets/purloin.png`
+            break;
+        case "Scorbunny":
+            pokename = "";
+            routeImg.src = `assets/.png`
+            break;
+        case "Popplio":
+            pokename = "";
+            routeImg.src = `assets/.png`
+            break;
+    }
+    h1.innerText = "You encountered " + pokename;
+    story.innerHTML = "";
+    encounterDiv.style.display = "block";
+    btnKeep.style.display = "block";
+    btnLeave.style.display = "block";
+    btnfirstGym.style.display = "none";
     btnsecEncounter.style.display = "none";
 }
 
 function firstGym(){
-    h1.innerHTML = "Gym"
-    if(pImg3.title == ""){
-        story.innerHTML = "only 2 pokemon";
-    }else if(pImg3.title != ""){
-        story.innerHTML = "only 3 pokemon";
+    h1.innerHTML = "Gym";
+    
+    switch(pImg1.title){
+        case "Snivy":
+            routeImg.src = `assets/SnivyGym1.png`;
+            if(pImg3.title == ""){
+                story.innerHTML = "only 2 pokemon";
+            }else if(pImg3.title != ""){
+                story.innerHTML = "only 3 pokemon";
+            }
+            break;
+        case "Scorbunny":
+            routeImg.src = `assets/.png`;
+            if(pImg3.title == ""){
+                story.innerHTML = "only 2 pokemon";
+            }else if(pImg3.title != ""){
+                story.innerHTML = "only 3 pokemon";
+            }
+            break;
+        case "Popplio":
+            routeImg.src = `assets/.png`;
+            if(pImg3.title == ""){
+                story.innerHTML = "only 2 pokemon";
+            }else if(pImg3.title != ""){
+                story.innerHTML = "only 3 pokemon";
+            }
+            break;
     }
 }
 
@@ -174,19 +223,27 @@ function keep(){
         case "Snivy":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "Purrloin";
-                btnKeep.style.display = "none";
-                btnLeave.style.display = "none";
                 pImg3.src = `assets/purloinpixel.png`;
                 pImg3.title = "Purrloin";
-                
             }
             break;
         case "Scorbunny":
-            break;
+            if(pImg2.title != "" && pImg3.title == ""){
+                pokename = "";
+                pImg3.src = `assets/.png`;
+                pImg3.title = "";
+            }
         case "Popplio":
+            if(pImg2.title != "" && pImg3.title == ""){
+                pokename = "";
+                pImg3.src = `assets/.png`;
+                pImg3.title = "";
+            }
             break;
     }
 
+    btnKeep.style.display = "none";
+    btnLeave.style.display = "none";
     h1.innerHTML = "Insert text here";
     story.innerHTML = pokename + " was added to your party!";
     btnfirstGym.style.display = "block";
@@ -198,31 +255,25 @@ function leave(){
         case "Snivy":
             if(pImg2.title != "" || pImg3 == ""){
                 pokename = "Purrloin";
-                btnKeep.style.display = "none";
-                btnLeave.style.display = "none";
             }
             break;
         case "Scorbunny":
+            if(pImg2.title != "" || pImg3 == ""){
+                pokename = "";
+            }
             break;
         case "Popplio":
+            if(pImg2.title != "" || pImg3 == ""){
+                pokename = "";
+            }
             break;
     }
 
+    btnKeep.style.display = "none";
+    btnLeave.style.display = "none";
     h1.innerHTML = "Insert text here";
     story.innerHTML = "You left "+ pokename;
     btnfirstGym.style.display = "block";
-}
-
-function box(pokename){
-
-}
-
-function encounter(pokename){
-    h1.innerText = "You encountered " + pokename;
-    encounterDiv.style.display = "block";
-    btnKeep.style.display = "flexbox";
-    btnLeave.style.display = "block";
-    btnfirstGym.style.display = "none";
 }
 
 function showTxtAndChangeBackground(color){
