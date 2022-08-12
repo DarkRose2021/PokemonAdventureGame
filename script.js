@@ -80,7 +80,7 @@ popplio.addEventListener("click",() => {
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Popplio";
         story.innerHTML = "Popplio was added to your party!";
-        pImg1.src = `assets/Popliopixel.png`;
+        pImg1.src = `assets/Popplio/Popliopixel.png`;
         pImg1.title = "Popplio";
         document.body.style.backgroundColor = "#457B9D";
         showTxtAndChangeBackground("#2B556F");
@@ -97,7 +97,7 @@ scorbunny.addEventListener("click", () =>{
     btnChoose.addEventListener("click", () =>{
         h1.innerHTML = "You choose Scorbunny";
         story.innerHTML = "Scorbunny was added to your party!";
-        pImg1.src = `assets/scorbunnypixel.png`;
+        pImg1.src = `assets/Scorbunny/scorbunnypixel.png`;
         pImg1.title = "Scorbunny";
         document.body.style.backgroundColor = "#C24B57";
         showTxtAndChangeBackground("#8E2731");
@@ -115,7 +115,7 @@ snivy.addEventListener("click", () =>{
         //changing text
         h1.innerHTML = "You choose Snivy";
         story.innerHTML = `The little grass Pokémon shyly approaches you. You slowly reach your hand out, a Pokémon ball laying upon it. You let the snivy make the first move. Snivy was added to your party!`;
-        pImg1.src = `assets/snivypixel.png`;
+        pImg1.src = `assets/Snivy/snivypixel.png`;
         pImg1.title = "Snivy";
         document.body.style.backgroundColor = "#75C45B";
         showTxtAndChangeBackground("#57A03F");
@@ -135,17 +135,17 @@ function firstEncounter(){
             break;
         case "Scorbunny":
             pokename = "";
-            routeImg.src = `assets/.png`;
+            routeImg.src = `assets/Scorbunny/.png`;
             story.innerHTML = "Story text here";
-            pImg2.src = `assets/.png`;
-            pImg2.title = "";
+            pImg2.src = `assets/Scorbunny/audinopixel.png`;
+            pImg2.title = "Audino";
             break;
         case "Popplio":
             pokename = "";
             routeImg.src = `assets/.png`;
             story.innerHTML = "Story text here";
-            pImg2.src = `assets/.png`;
-            pImg2.title = "";
+            pImg2.src = `assets/Popplio/patratpixel.png`;
+            pImg2.title = "Patrat";
             break;
     }
     h1.innerHTML = "You encountered a "+ pokename+ "!";
@@ -165,11 +165,11 @@ function secEncounter(){
     switch(pImg1.title){
         case "Snivy":
             pokename = "Purrloin";
-            routeImg.src = `assets/purloin.png`
+            routeImg.src = `assets/Snivy/purloin.png`
             break;
         case "Scorbunny":
             pokename = "";
-            routeImg.src = `assets/.png`
+            routeImg.src = `assets/Scorbunny/.png`
             break;
         case "Popplio":
             pokename = "";
@@ -190,7 +190,7 @@ function firstGym(){
 
     switch(pImg1.title){
         case "Snivy":
-            routeImg.src = `assets/SnivyGym1.png`;
+            routeImg.src = `assets/Snivy/SnivyGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
             }else if(pImg3.title != ""){
@@ -198,7 +198,7 @@ function firstGym(){
             }
             break;
         case "Scorbunny":
-            routeImg.src = `assets/.png`;
+            routeImg.src = `assets/Scorbunny/ScorbunnyGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
             }else if(pImg3.title != ""){
@@ -206,7 +206,7 @@ function firstGym(){
             }
             break;
         case "Popplio":
-            routeImg.src = `assets/.png`;
+            routeImg.src = `assets/Popplio/PopplioGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
             }else if(pImg3.title != ""){
@@ -223,21 +223,21 @@ function keep(){
         case "Snivy":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "Purrloin";
-                pImg3.src = `assets/purloinpixel.png`;
+                pImg3.src = `assets/Snivy/purloinpixel.png`;
                 pImg3.title = "Purrloin";
             }
             break;
         case "Scorbunny":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "";
-                pImg3.src = `assets/.png`;
-                pImg3.title = "";
+                pImg3.src = `assets/Scorbunny/wynautpixel.png`;
+                pImg3.title = "Wynaut";
             }
         case "Popplio":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "";
-                pImg3.src = `assets/.png`;
-                pImg3.title = "";
+                pImg3.src = `assets/Popplio/wynautpixel.png`;
+                pImg3.title = "Wynaut";
             }
             break;
     }
