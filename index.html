@@ -11,7 +11,7 @@
         <script src="script.js" defer></script> 
         <!--
             <each path, add encounter pokemon>
-            Grass: Snivy ->
+            Grass: Snivy -> Lillipup -> encounter -> Purrloin -> gym
             Fire: Scorbunny ->
             Water: Poplio ->
         -->
@@ -19,9 +19,22 @@
     </head>
 
     <body>
+        <!--Intro Text-->
+        <div id="start">
+            <p id="starttxt">You wake up in total darkness, groggy from sleep. 
+                It’s peaceful here, in your half-asleep state. And yet, you feel as though you have something to do today. But what…? 
+                Dishes?
+                Laundry?
+                No, neither of those sound like it. What was it again??</p>
+            <button id="btnStart" onclick="beginning()">Continue</button>
+            <button id="btnStart2" onclick="getname()">Continue</button>
+        </div>
+
         <!--Welcome + Get player's name-->
         <div id="welcome">
-            <h1 id="webpagetxt">Welcome to ______ Region!</h1>
+            <div id="h1div"> 
+                <h1 id="webpagetxt">Welcome to ______ Region!</h1>
+            </div>
             <img src="assets/profOak.png" id="profOak">
             <div id="formdiv">
                 <form id="form" method="post">
@@ -34,7 +47,7 @@
         
         <!--Starters-->
         <div id="starters">
-            <h1>Choose a starter:</h1>
+            <h1 id="backgroundcolor">You are presented with three young Pokémon. Popplio, Scorbunny, and Snivy. All three look eagerly at you. You make your decision carefully.</h1>
 
             <div id="img">
                 <button id="popplio"><img src="assets/Poplio.png"></button>
@@ -49,6 +62,7 @@
             <button id="choose">Choose </button>
         </div>
 
+        <!--party display-->
         <div id="partyDiv">
             <div id="partyImg">
                 <img id="party1">
@@ -58,7 +72,6 @@
                 <img id="party5">
                 <img id="party6">
             </div>
-            <p id="infoTxt"></p>
         </div>
 
         <!--Story area-->
@@ -66,14 +79,17 @@
         <div id="storyTxtDiv">
             <img id="routeImg">
             <p id="storytxt"></p>
-            <button id="Continue">Continue</button>
+            <button class="Continue" id="firstEncounter" onclick="firstEncounter()">Continue</button>
+            <button class="Continue" id="firstTeamEncounter" onclick="firstTeamEncounter()">Continue</button>
+            <button class="Continue" id="secEncounter" onclick="secEncounter()">Continue</button>
+            <button class="Continue" id="firstGym" onclick="firstGym()">Continue</button>
         </div>
 
         <!--Encounter buttons-->
         <div id="encounter">
             <p id="encoutnerTxt"></p>
-            <button id="keep">Catch</button>
-            <button id="leave">Leave</button>
+            <button id="keep" onclick="keep()">Catch</button>
+            <button id="leave" onclick="leave()">Leave</button>
             <div id="partyFullDiv">
                 <button id="Add">Add to Party</button>
                 <button id="box">Add to Box</button>

@@ -1,5 +1,5 @@
 body{
-    background-image: url("assets/map.jpg");    
+    background-color: black;    
     background-repeat: none;
     background-position:inherit;
     background-size: cover;
@@ -11,9 +11,17 @@ h1{
     text-align: center;
 }
 
-#starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv{
-    /* hides starters when page is opened/refreshed*/
+#backgroundcolor{
+    background-color: #6C6C6C;
+}
+
+#starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv, #welcome, #btnStart2{
+    /* hides other divs when page is opened/refreshed*/
     display: none;
+}
+
+button{
+    cursor: pointer;
 }
 
 #partyImg img{
@@ -27,8 +35,8 @@ h1{
 }
 
 #routeImg{
-    margin-left: 37%;
-    max-width: 25%;
+    margin-left: 40%;
+    max-width: 15%;
 }
 
 #storytxt{
@@ -39,17 +47,16 @@ h1{
     font-size: 20px;
 }
 
-#Continue{
+.Continue{
     font-family: 'VT323', monospace;
     font-size: 20px;
     color: #F1FAEE;
-    display: block;
+    display: none;
     text-align: center;
     border: none;
     padding: .7% 1.5% .7% 1.5%;
     margin-top: .7%;
     margin-left: 43%;
-    cursor: pointer;
     opacity: 1;
     transition: 0.3s;
 }
@@ -61,7 +68,6 @@ h1{
 #starters img, button{
     max-width: 200px;
     margin-left: 2%;
-    cursor: pointer;
 }
 
 #popplio{
@@ -104,7 +110,7 @@ input[type=text]{
     border: none;
 }
 
-#submit{
+#submit, #choose,#encounter button{
     font-family: 'VT323', monospace;
     font-size: 20px;
     background-color: #6C6C6C;
@@ -115,7 +121,6 @@ input[type=text]{
     padding: .7% 1.5% .7% 1.5%;
     margin-top: .7%;
     margin-left: 43%;
-    cursor: pointer;
     opacity: 1;
     transition: 0.3s;
 }
@@ -128,25 +133,34 @@ input[type=text]{
     padding: .5%;
 }
 
-#choose{
+#gameTxtTitle{
+    margin-top: 1%;
+}
+
+#encounter button, #start button{
+    color: #F1FAEE;
+}
+
+#keep{
+    display: "flexbox";
+    flex-direction: row;
+}
+
+#starttxt{
+    color: #F1FAEE;
+    font-size: 30px;
+    text-align: center;
+}
+
+#start button{
     font-family: 'VT323', monospace;
     font-size: 20px;
     background-color: #6C6C6C;
-    color: black;
-    display: block;
     text-align: center;
     border: none;
     padding: .7% 1.5% .7% 1.5%;
     margin-top: .7%;
     margin-left: 43%;
-    cursor: pointer;
     opacity: 1;
     transition: 0.3s;
 }
-
-#gameTxtTitle{
-    margin-top: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
-}
-
