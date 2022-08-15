@@ -40,7 +40,7 @@ const btnAdd = document.getElementById("Add");
 const btnBox = document.getElementById("box");
 
 //party ids
-const party = document.getElementById("partyDiv");
+const party = document.getElementById("partyImg");
 const pImg1 = document.getElementById("party1");
 const pImg2 = document.getElementById("party2");
 const pImg3 = document.getElementById("party3");

@@ -15,7 +15,7 @@ h1{
     background-color: #6C6C6C;
 }
 
-#starters, #starterSelection, #storyTxtDiv, #partyDiv, #encounter, #partyFullDiv, #welcome, #btnStart2{
+#starters, #starterSelection, #storyTxtDiv, #partyImg, #encounter, #partyFullDiv, #welcome, #btnStart2{
     /* hides other divs when page is opened/refreshed*/
     display: none;
 }
@@ -30,7 +30,7 @@ button{
     margin-left: 2%;
 }
 
-#partyDiv{
+#partyImg{
     margin-right: 83%;
 }
 
