@@ -156,7 +156,7 @@ function firstEncounter(){
 function firstTeamEncounter(){
     routeImg.src = `assets/accumula_town.png`;
     h1.innerHTML = "You there!";
-    story.innerHTML = "Story text here";
+    story.innerHTML = `Continuing along on your adventure you stop by a town to give your Pokémon a chance to rest up. On your way to the center you notice a crowd gathered, clearly antsy. You walk over and are presented with a group of people talking about setting Pokémon free. You bring your companions in close and quickly move along, not interested in their propaganda.`;
     btnfirstTeamEncounter.style.display = "none";
     btnsecEncounter.style.display = "block";
 }
@@ -165,7 +165,8 @@ function secEncounter(){
     switch(pImg1.title){
         case "Snivy":
             pokename = "Purrloin";
-            routeImg.src = `assets/Snivy/purloin.png`
+            routeImg.src = `assets/Snivy/purloin.png`;
+            story.innerHTML = `Continuing along the next route, you and you companions stop for a lunch break. As you stir the heavenly smelling soup you are approached by a confident looking purrloin. The cheeky creature struts towards the pot of soup and sits down, staring directly at you, as if waiting. You sigh but pour the creature a serving. It happily digs in`;
             break;
         case "Scorbunny":
             pokename = "";
@@ -177,7 +178,7 @@ function secEncounter(){
             break;
     }
     h1.innerText = "You encountered " + pokename;
-    story.innerHTML = "";
+    
     encounterDiv.style.display = "block";
     btnKeep.style.display = "block";
     btnLeave.style.display = "block";
@@ -192,7 +193,7 @@ function firstGym(){
         case "Snivy":
             routeImg.src = `assets/Snivy/SnivyGym1.png`;
             if(pImg3.title == ""){
-                story.innerHTML = "only 2 pokemon";
+                story.innerHTML = "After training for several days, it’s finally time! You approach your first gym, giddy with nervous excitement. Your snivy walks by your side, ever the loyal friend. You take a deep breath and open the door. Inside you are greeted by three guys and their partner pokemon. This is it. The red head steps forward and introduces himself as Chilli. He will be your opponent. Here goes nothing!";
             }else if(pImg3.title != ""){
                 story.innerHTML = "only 3 pokemon";
             }
@@ -225,6 +226,7 @@ function keep(){
                 pokename = "Purrloin";
                 pImg3.src = `assets/Snivy/purloinpixel.png`;
                 pImg3.title = "Purrloin";
+                story.innerHTML = `You slowly pull out a poke ball and offer it to the purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal`
             }
             break;
         case "Scorbunny":
@@ -245,7 +247,7 @@ function keep(){
     btnKeep.style.display = "none";
     btnLeave.style.display = "none";
     h1.innerHTML = "Insert text here";
-    story.innerHTML = pokename + " was added to your party!";
+    story.append(pokename + " was added to your party!");
     btnfirstGym.style.display = "block";
 }
 
@@ -253,17 +255,18 @@ function keep(){
 function leave(){
     switch(pImg1.title){
         case "Snivy":
-            if(pImg2.title != "" || pImg3 == ""){
+            if(pImg2.title != "" || pImg3.title == ""){
                 pokename = "Purrloin";
+                story.innerHTML = "You stroke the creatures head gently, enthralled by its purring. It happily continues to eat before wandering off after giving you an affectionate headbutt.";
             }
             break;
         case "Scorbunny":
-            if(pImg2.title != "" || pImg3 == ""){
+            if(pImg2.title != "" || pImg3.title == ""){
                 pokename = "";
             }
             break;
         case "Popplio":
-            if(pImg2.title != "" || pImg3 == ""){
+            if(pImg2.title != "" || pImg3.title == ""){
                 pokename = "";
             }
             break;
@@ -272,7 +275,7 @@ function leave(){
     btnKeep.style.display = "none";
     btnLeave.style.display = "none";
     h1.innerHTML = "Insert text here";
-    story.innerHTML = "You left "+ pokename;
+    story.append("You left "+ pokename);
     btnfirstGym.style.display = "block";
 }
 
