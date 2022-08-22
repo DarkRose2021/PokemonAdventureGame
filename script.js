@@ -141,8 +141,8 @@ function firstEncounter(){
             pImg2.title = "Audino";
             break;
         case "Popplio":
-            pokename = "";
-            routeImg.src = `assets/.png`;
+            pokename = "Patrat";
+            routeImg.src = `assets/Popplio/patrat.png`;
             story.innerHTML = "Story text here";
             pImg2.src = `assets/Popplio/patratpixel.png`;
             pImg2.title = "Patrat";
@@ -169,12 +169,12 @@ function secEncounter(){
             story.innerHTML = `Continuing along the next route, you and you companions stop for a lunch break. As you stir the heavenly smelling soup you are approached by a confident looking purrloin. The cheeky creature struts towards the pot of soup and sits down, staring directly at you, as if waiting. You sigh but pour the creature a serving. It happily digs in`;
             break;
         case "Scorbunny":
-            pokename = "";
-            routeImg.src = `assets/Scorbunny/.png`
+            pokename = "Pidove";
+            routeImg.src = `assets/Scorbunny/pidove.png`;
             break;
         case "Popplio":
-            pokename = "";
-            routeImg.src = `assets/.png`
+            pokename = "Wynaut";
+            routeImg.src = `assets/Popplio/wynaut.png`;
             break;
     }
     h1.innerText = "You encountered " + pokename;
@@ -231,13 +231,13 @@ function keep(){
             break;
         case "Scorbunny":
             if(pImg2.title != "" && pImg3.title == ""){
-                pokename = "";
+                pokename = "Wynaut";
                 pImg3.src = `assets/Scorbunny/wynautpixel.png`;
                 pImg3.title = "Wynaut";
             }
         case "Popplio":
             if(pImg2.title != "" && pImg3.title == ""){
-                pokename = "";
+                pokename = "Wynaut";
                 pImg3.src = `assets/Popplio/wynautpixel.png`;
                 pImg3.title = "Wynaut";
             }
@@ -246,7 +246,7 @@ function keep(){
 
     btnKeep.style.display = "none";
     btnLeave.style.display = "none";
-    h1.innerHTML = "Insert text here";
+    h1.innerHTML = "You caught " +pokename;
     story.append(pokename + " was added to your party!");
     btnfirstGym.style.display = "block";
 }
@@ -262,12 +262,12 @@ function leave(){
             break;
         case "Scorbunny":
             if(pImg2.title != "" || pImg3.title == ""){
-                pokename = "";
+                pokename = "Wynaut";
             }
             break;
         case "Popplio":
             if(pImg2.title != "" || pImg3.title == ""){
-                pokename = "";
+                pokename = "Wynaut";
             }
             break;
     }
