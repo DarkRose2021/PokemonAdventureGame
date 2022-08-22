@@ -33,7 +33,7 @@
         <!--Welcome + Get player's name-->
         <div id="welcome">
             <div id="h1div"> 
-                <h1 id="webpagetxt">Welcome to ______ Region!</h1>
+                <h1 id="webpagetxt">Welcome to Unova Region!</h1>
             </div>
             <img src="assets/profOak.png" id="profOak">
             <div id="formdiv">
@@ -79,19 +79,18 @@
             <p id="storytxt"></p>
             <button class="Continue" id="firstEncounter" onclick="firstEncounter()">Continue</button>
             <button class="Continue" id="firstTeamEncounter" onclick="firstTeamEncounter()">Continue</button>
-            <button class="Continue" id="secEncounter" onclick="secEncounter()">Continue</button>
+            <button class="Continue" id="secEncounter" onclick="encounters('2')">Continue</button>
             <button class="Continue" id="firstGym" onclick="firstGym()">Continue</button>
+            <button class="Continue" id="route2" onclick="route2()">Continue</button>
+            <button class="Continue" onclick="encounters('3')" id="thirdEncounter" >Continue</button>
+            <button class="Continue" id="secTeamEncounter" onclick="secTeamEncounter()">Continue</button>
+            <button class="Continue" id="secGym" onclick="secGym()">Continue</button>
         </div>
 
         <!--Encounter buttons-->
         <div id="encounter">
-            <p id="encoutnerTxt"></p>
             <button id="keep" onclick="keep()">Catch</button>
             <button id="leave" onclick="leave()">Leave</button>
-            <div id="partyFullDiv">
-                <button id="Add">Add to Party</button>
-                <button id="box">Add to Box</button>
-            </div>
         </div>
     </body>
 </html>

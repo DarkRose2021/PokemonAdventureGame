@@ -11,33 +11,37 @@ const form = document.getElementById("form");
 const playerName = document.getElementById("PlayerName");
 const submit = document.getElementById("submit");
 var Name;
+var encounterInt;
 
-//starterbtn ids
+//starters
 const popplio = document.getElementById("popplio");
 const scorbunny = document.getElementById("scorbunny");
 const snivy = document.getElementById("snivy");
-
 const starterInfoDiv = document.getElementById("starterSelection");
 const starterInfo = document.getElementById("starterInfo");
 const btnChoose = document.getElementById("choose");
 
+//text
 const h1 = document.getElementById("gameTxtTitle");
 const routeImg = document.getElementById("routeImg");
 const storyDiv = document.getElementById("storyTxtDiv");
 const story = document.getElementById("storytxt");
+
+//buttons
 const btnFirstEncounter = document.getElementById("firstEncounter");
 const btnfirstTeamEncounter = document.getElementById("firstTeamEncounter");
 const btnsecEncounter = document.getElementById("secEncounter");
 const btnfirstGym = document.getElementById("firstGym");
+const btnroute2 = document.getElementById("route2");
+const btnthirEncounter = document.getElementById("thirdEncounter");
+const btnsecTeamEncounter = document.getElementById("secTeamEncounter");
+const btnsecGym = document.getElementById("secGym");
 
 //Encounter ids
 const encounterDiv = document.getElementById("encounter");
 const encounterTxt = document.getElementById("encounterTxt");
 const btnKeep = document.getElementById("keep");
 const btnLeave = document.getElementById("leave");
-const fullPartyDiv = document.getElementById("partyFullDiv");
-const btnAdd = document.getElementById("Add");
-const btnBox = document.getElementById("box");
 
 //party ids
 const party = document.getElementById("partyImg");
@@ -130,9 +134,11 @@ function firstEncounter(){
             pokename = "Lillipup";
             routeImg.src = `assets/Snivy/lillipup.png`;
             story.innerHTML = `While walking along route 1 you hear a rambunctious barking. A Lillipup runs out in front of you, causing you to fall backwards. The Lillipup continues to run around, barking, before running up to your face. It’s a little ball of energy and seems to be concerned that you’re on the ground. You pet the dog Pokémon and slowly raise from the ground. The pup circles you, barking, making you smile. It seems to want to go with you. You smile, presenting a poke-ball to the little fella. It boops it with his nose, disappearing into the ball. Lillipup joins your team!`;
+
             pImg2.src = `assets/Snivy/lillipuppixel.png`;
             pImg2.title = "Lillipup";
             break;
+
         case "Scorbunny":
             pokename = "";
             routeImg.src = `assets/Scorbunny/.png`;
@@ -140,6 +146,7 @@ function firstEncounter(){
             pImg2.src = `assets/Scorbunny/audinopixel.png`;
             pImg2.title = "Audino";
             break;
+
         case "Popplio":
             pokename = "Patrat";
             routeImg.src = `assets/Popplio/patrat.png`;
@@ -161,31 +168,6 @@ function firstTeamEncounter(){
     btnsecEncounter.style.display = "block";
 }
 
-function secEncounter(){
-    switch(pImg1.title){
-        case "Snivy":
-            pokename = "Purrloin";
-            routeImg.src = `assets/Snivy/purloin.png`;
-            story.innerHTML = `Continuing along the next route, you and you companions stop for a lunch break. As you stir the heavenly smelling soup you are approached by a confident looking purrloin. The cheeky creature struts towards the pot of soup and sits down, staring directly at you, as if waiting. You sigh but pour the creature a serving. It happily digs in`;
-            break;
-        case "Scorbunny":
-            pokename = "Pidove";
-            routeImg.src = `assets/Scorbunny/pidove.png`;
-            break;
-        case "Popplio":
-            pokename = "Wynaut";
-            routeImg.src = `assets/Popplio/wynaut.png`;
-            break;
-    }
-    h1.innerText = "You encountered " + pokename;
-    
-    encounterDiv.style.display = "block";
-    btnKeep.style.display = "block";
-    btnLeave.style.display = "block";
-    btnfirstGym.style.display = "none";
-    btnsecEncounter.style.display = "none";
-}
-
 function firstGym(){
     h1.innerHTML = "Gym";
 
@@ -194,52 +176,187 @@ function firstGym(){
             routeImg.src = `assets/Snivy/SnivyGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "After training for several days, it’s finally time! You approach your first gym, giddy with nervous excitement. Your snivy walks by your side, ever the loyal friend. You take a deep breath and open the door. Inside you are greeted by three guys and their partner pokemon. This is it. The red head steps forward and introduces himself as Chilli. He will be your opponent. Here goes nothing!";
+                
             }else if(pImg3.title != ""){
                 story.innerHTML = "only 3 pokemon";
             }
             break;
+
         case "Scorbunny":
             routeImg.src = `assets/Scorbunny/ScorbunnyGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
+                
             }else if(pImg3.title != ""){
                 story.innerHTML = "only 3 pokemon";
             }
             break;
+
         case "Popplio":
             routeImg.src = `assets/Popplio/PopplioGym1.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
+
             }else if(pImg3.title != ""){
                 story.innerHTML = "only 3 pokemon";
             }
             break;
     }
+    
+    btnfirstGym.style.display = "none";
+    btnroute2.style.display = "block";
 }
 
+function route2(){
+    h1.innerHTML = "Welcome to Well Spring Cave!";
+    story.innerHTML = `You enter the cave`;
+    btnroute2.style.display = "none";
+    btnthirEncounter.style.display = "block";
+}
 
+function secTeamEncounter(){
+    h1.innerHTML = "Second team encounter";
+    story.innerHTML ="You encountered the team";
+    routeImg.src = "assets/wellspringcave.png";
+    btnsecTeamEncounter.style.display = "none";
+    btnsecGym.style.display = "block";
+}
+
+function secGym(){
+    h1.innerHTML = "Gym";
+
+    switch(pImg1.title){
+        case "Snivy":
+            routeImg.src = `assets/Snivy/.png`;
+            if(pImg4.title == ""){
+                story.innerHTML = "only 3 pokemon";
+                
+            }else if(pImg3.title != "" && pImg4 != ""){
+                story.innerHTML = "only 4 pokemon";
+            }
+            break;
+
+        case "Scorbunny":
+            routeImg.src = `assets/Scorbunny/.png`;
+            if(pImg4.title == ""){
+                story.innerHTML = "only 3 pokemon";
+                
+            }else if(pImg3.title != "" && pImg4 != ""){
+                story.innerHTML = "only 4 pokemon";
+            }
+            break;
+
+        case "Popplio":
+            routeImg.src = `assets/Popplio/.png`;
+            if(pImg4.title == ""){
+                story.innerHTML = "only 3 pokemon";
+                
+            }else if(pImg3.title != "" && pImg4 != ""){
+                story.innerHTML = "only 4 pokemon";
+            }
+            break;
+    }
+}
+
+function encounters(encounterNum){
+    switch(pImg1.title){
+        case "Snivy":
+            if(encounterNum == 2){
+                pokename = "Purrloin";
+                routeImg.src = `assets/Snivy/purloin.png`;
+                story.innerHTML = `Continuing along the next route, you and you companions stop for a lunch break. As you stir the heavenly smelling soup you are approached by a confident looking purrloin. The cheeky creature struts towards the pot of soup and sits down, staring directly at you, as if waiting. You sigh but pour the creature a serving. It happily digs in`;
+                encounterInt = 2;
+                btnsecEncounter.style.display = "none"
+
+            }else if(encounterNum == 3){
+                pokename = "Blizle";
+                routeImg.src = `assets/Snivy/blizle.png`;
+                story.innerHTML = ``;
+                btnthirEncounter.style.display = "none"
+                encounterInt = 3;
+            }
+            break
+
+        case "Scorbunny":
+            if(encounterNum == 2){
+                pokename = "Audino";
+                routeImg.src = `assets/Scorbunny/audino.png`;
+                story.innerHTML = ``;
+                btnsecEncounter.style.display = "none"
+                encounterInt = 2;
+            }else if(encounterNum == 3){
+                pokename = "Pidove";
+                routeImg.src = `assets/Scorbunny/pidove.png`;
+                story.innerHTML = ``;
+                btnthirEncounter.style.display = "none"
+                encounterInt = 3;
+            }
+            break
+
+        case "Popplio":
+            if(encounterNum == 2){
+                pokename = "Wynaut";
+                routeImg.src = `assets/Popplio/wynaut.png`;
+                story.innerHTML = ``;
+                btnsecEncounter.style.display = "none"
+                encounterInt = 2;
+            }else if(encounterNum == 3){
+                pokename = "Dirlbur";
+                routeImg.src = `assets/Popplio/dirlbur.png`;
+                story.innerHTML = ``;
+                btnthirEncounter.style.display = "none"
+                encounterInt = 3;
+            }
+            break
+    }
+    h1.innerHTML = "You encountered a " +pokename
+    encounterDiv.style.display = "block";
+    btnKeep.style.display = "block";
+    btnLeave.style.display = "block";
+
+    console.log("encounter "+encounterNum);
+    console.log("encounterint "+encounterInt);
+}
 
 function keep(){
     switch(pImg1.title){
         case "Snivy":
-            if(pImg2.title != "" && pImg3.title == ""){
+            if(pImg3.title == ""){
                 pokename = "Purrloin";
                 pImg3.src = `assets/Snivy/purloinpixel.png`;
-                pImg3.title = "Purrloin";
-                story.innerHTML = `You slowly pull out a poke ball and offer it to the purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal`
+                pImg3.title = pokename;
+                story.innerHTML = `You slowly pull out a poke ball and offer it to the purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal`;
+                break;
+
+            }else if(pImg3.title == ""){
+                pokename = "Blizle";
+                pImg3.src = `assets/Snivy/blizlepixel.png`;
+                story.innerHTML = ``;
+                pImg3.title = pokename;
+
+            }else if(pImg3 != "" ){
+                pokename = "Blizle";
+                pImg4.src = `assets/Snivy/blizlepixel.png`;
+                pImg4.title = pokename;
+                story.innerHTML = ``;
             }
             break;
+
         case "Scorbunny":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "Wynaut";
                 pImg3.src = `assets/Scorbunny/wynautpixel.png`;
                 pImg3.title = "Wynaut";
+                story.innerHTML = ``;
             }
+            break;
+
         case "Popplio":
             if(pImg2.title != "" && pImg3.title == ""){
                 pokename = "Wynaut";
                 pImg3.src = `assets/Popplio/wynautpixel.png`;
                 pImg3.title = "Wynaut";
+                story.innerHTML = ``;
             }
             break;
     }
@@ -248,9 +365,15 @@ function keep(){
     btnLeave.style.display = "none";
     h1.innerHTML = "You caught " +pokename;
     story.append(pokename + " was added to your party!");
-    btnfirstGym.style.display = "block";
-}
 
+    if(encounterInt == 2){
+        btnfirstGym.style.display = "block";
+    }else if(encounterInt == 3){
+        btnsecTeamEncounter.style.display = "block";
+    }
+
+    console.log("keep: "+encounterInt);
+}
 
 function leave(){
     switch(pImg1.title){
@@ -260,14 +383,18 @@ function leave(){
                 story.innerHTML = "You stroke the creatures head gently, enthralled by its purring. It happily continues to eat before wandering off after giving you an affectionate headbutt.";
             }
             break;
+
         case "Scorbunny":
             if(pImg2.title != "" || pImg3.title == ""){
                 pokename = "Wynaut";
+                story.innerHTML = ``;
             }
             break;
+
         case "Popplio":
             if(pImg2.title != "" || pImg3.title == ""){
                 pokename = "Wynaut";
+                story.innerHTML = ``;
             }
             break;
     }
@@ -276,7 +403,14 @@ function leave(){
     btnLeave.style.display = "none";
     h1.innerHTML = "Insert text here";
     story.append("You left "+ pokename);
-    btnfirstGym.style.display = "block";
+
+    if(encounterInt == 2){
+        btnfirstGym.style.display = "block";
+    }else if(encounterInt == 3){
+        btnsecTeamEncounter.style.display = "block";
+    }
+
+    console.log("leave: "+encounterInt);
 }
 
 function showTxtAndChangeBackground(color){
@@ -290,16 +424,20 @@ function showTxtAndChangeBackground(color){
     party.style.display = "block";
     party.style.backgroundColor = color;
     story.style.backgroundColor = color;
-    btnAdd.style.backgroundColor = color;
-    btnBox.style.backgroundColor = color;
     btnLeave.style.backgroundColor = color;
     btnKeep.style.backgroundColor = color;
     btnFirstEncounter.style.backgroundColor = color;
     btnfirstTeamEncounter.style.backgroundColor = color;
     btnsecEncounter.style.backgroundColor = color;
+    btnthirEncounter.style.backgroundColor = color;
     btnfirstGym.style.backgroundColor = color;
+    btnsecGym.style.backgroundColor = color;
+    btnroute2.style.backgroundColor = color;
+    btnsecTeamEncounter.style.backgroundColor = color;
     btnFirstEncounter.style.display = "none";
     btnfirstTeamEncounter.style.display = "none";
     btnsecEncounter.style.display = "none";
+    btnthirEncounter.style.display = "none";
     btnfirstGym.style.display = "none";
+    btnsecGym.style.display = "none";
 }
