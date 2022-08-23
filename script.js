@@ -32,9 +32,9 @@ const btnFirstEncounter = document.getElementById("firstEncounter");
 const btnfirstTeamEncounter = document.getElementById("firstTeamEncounter");
 const btnsecEncounter = document.getElementById("secEncounter");
 const btnfirstGym = document.getElementById("firstGym");
-const btnroute2 = document.getElementById("route2");
 const btnthirEncounter = document.getElementById("thirdEncounter");
 const btnsecTeamEncounter = document.getElementById("secTeamEncounter");
+const btnpopEncounter = document.getElementById("popEncounter");
 const btnsecGym = document.getElementById("secGym");
 
 //Encounter ids
@@ -140,8 +140,8 @@ function firstEncounter(){
             break;
 
         case "Scorbunny":
-            pokename = "";
-            routeImg.src = `assets/Scorbunny/.png`;
+            pokename = "Audino";
+            routeImg.src = `assets/Scorbunny/audino.png`;
             story.innerHTML = "Story text here";
             pImg2.src = `assets/Scorbunny/audinopixel.png`;
             pImg2.title = "Audino";
@@ -204,13 +204,6 @@ function firstGym(){
     }
     
     btnfirstGym.style.display = "none";
-    btnroute2.style.display = "block";
-}
-
-function route2(){
-    h1.innerHTML = "Welcome to Well Spring Cave!";
-    story.innerHTML = `You enter the cave`;
-    btnroute2.style.display = "none";
     btnthirEncounter.style.display = "block";
 }
 
@@ -219,7 +212,11 @@ function secTeamEncounter(){
     story.innerHTML ="You encountered the team";
     routeImg.src = "assets/wellspringcave.png";
     btnsecTeamEncounter.style.display = "none";
-    btnsecGym.style.display = "block";
+    if(pImg1.title == "Popplio" && encounterInt == 3){
+        btnpopEncounter.style.display = "block"
+    }else{
+        btnsecGym.style.display = "block";
+    }
 }
 
 function secGym(){
@@ -228,9 +225,10 @@ function secGym(){
     switch(pImg1.title){
         case "Snivy":
             routeImg.src = `assets/Snivy/.png`;
-            if(pImg4.title == ""){
+            if(pImg3.title == ""){
+                story.innerHTML = "only 2 pokemon";
+            }else if(pImg4.title == "" && pImg3.title != ""){
                 story.innerHTML = "only 3 pokemon";
-                
             }else if(pImg3.title != "" && pImg4 != ""){
                 story.innerHTML = "only 4 pokemon";
             }
@@ -269,8 +267,8 @@ function encounters(encounterNum){
                 btnsecEncounter.style.display = "none"
 
             }else if(encounterNum == 3){
-                pokename = "Blizle";
-                routeImg.src = `assets/Snivy/blizle.png`;
+                pokename = "Blitzle";
+                routeImg.src = `assets/Snivy/blitzle.png`;
                 story.innerHTML = ``;
                 btnthirEncounter.style.display = "none"
                 encounterInt = 3;
@@ -279,8 +277,8 @@ function encounters(encounterNum){
 
         case "Scorbunny":
             if(encounterNum == 2){
-                pokename = "Audino";
-                routeImg.src = `assets/Scorbunny/audino.png`;
+                pokename = "Wynaut";
+                routeImg.src = `assets/Scorbunny/wynaut.png`;
                 story.innerHTML = ``;
                 btnsecEncounter.style.display = "none"
                 encounterInt = 2;
@@ -301,19 +299,28 @@ function encounters(encounterNum){
                 btnsecEncounter.style.display = "none"
                 encounterInt = 2;
             }else if(encounterNum == 3){
-                pokename = "Dirlbur";
-                routeImg.src = `assets/Popplio/dirlbur.png`;
+                pokename = "Blitzle";
+                routeImg.src = `assets/Snivy/blitzle.png`;
                 story.innerHTML = ``;
                 btnthirEncounter.style.display = "none"
                 encounterInt = 3;
+            }else if(encounterNum == 4){
+                pokename = "Dirlbur";
+                routeImg.src = `assets/Popplio/dirlbur.png`;
+                story.innerHTML = ``;
+                btnpopEncounter.style.display = "none"
+                encounterInt = 4;
             }
             break
     }
+    if(pImg1.title == "Popplio" && encounterInt == 3){
+        btnsecTeamEncounter.style.display = "block"
+    }else{
+        encounterDiv.style.display = "block";
+        btnKeep.style.display = "block";
+        btnLeave.style.display = "block";
+    }
     h1.innerHTML = "You encountered a " +pokename
-    encounterDiv.style.display = "block";
-    btnKeep.style.display = "block";
-    btnLeave.style.display = "block";
-
     console.log("encounter "+encounterNum);
     console.log("encounterint "+encounterInt);
 }
@@ -321,41 +328,62 @@ function encounters(encounterNum){
 function keep(){
     switch(pImg1.title){
         case "Snivy":
-            if(pImg3.title == ""){
+            if(pImg3.title == "" && encounterInt == 2){
                 pokename = "Purrloin";
                 pImg3.src = `assets/Snivy/purloinpixel.png`;
                 pImg3.title = pokename;
                 story.innerHTML = `You slowly pull out a poke ball and offer it to the purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal`;
-                break;
 
-            }else if(pImg3.title == ""){
-                pokename = "Blizle";
-                pImg3.src = `assets/Snivy/blizlepixel.png`;
+            }else if(pImg3.title == "" && encounterInt == 3){
+                pokename = "Blitzle";
+                pImg3.src = `assets/Snivy/blitzlepixel.png`;
                 story.innerHTML = ``;
                 pImg3.title = pokename;
 
-            }else if(pImg3 != "" ){
-                pokename = "Blizle";
-                pImg4.src = `assets/Snivy/blizlepixel.png`;
+            }else if(pImg3 != "" && encounterInt == 3){
+                pokename = "Blitzle";
+                pImg4.src = `assets/Snivy/blitzlepixel.png`;
                 pImg4.title = pokename;
                 story.innerHTML = ``;
             }
             break;
 
         case "Scorbunny":
-            if(pImg2.title != "" && pImg3.title == ""){
+            if(encounterInt == 2 && pImg3.title == ""){
                 pokename = "Wynaut";
                 pImg3.src = `assets/Scorbunny/wynautpixel.png`;
                 pImg3.title = "Wynaut";
+                story.innerHTML = ``;
+            }else if(pImg3.title == "" && encounterInt == 3){
+                pokename = "Pidove";
+                pImg3.src = `assets/Scorbunny/pidovepixel.png`;
+                story.innerHTML = ``;
+                pImg3.title = pokename;
+
+            }else if(pImg3 != "" && encounterInt == 3){
+                pokename = "Pidove";
+                pImg4.src = `assets/Snivy/pidovepixel.png`;
+                pImg4.title = pokename;
                 story.innerHTML = ``;
             }
             break;
 
         case "Popplio":
-            if(pImg2.title != "" && pImg3.title == ""){
+            if(encounterInt == 2 && pImg3.title == ""){
                 pokename = "Wynaut";
                 pImg3.src = `assets/Popplio/wynautpixel.png`;
                 pImg3.title = "Wynaut";
+                story.innerHTML = ``;
+            }else if(pImg3.title == "" && encounterInt == 4){
+                pokename = "Dirlbur";
+                pImg3.src = `assets/Scorbunny/dirlburpixel.png`;
+                story.innerHTML = ``;
+                pImg3.title = pokename;
+
+            }else if(pImg3 != "" && encounterInt == 4){
+                pokename = "Dirlbur";
+                pImg4.src = `assets/Snivy/dirlburpixel.png`;
+                pImg4.title = pokename;
                 story.innerHTML = ``;
             }
             break;
@@ -370,6 +398,8 @@ function keep(){
         btnfirstGym.style.display = "block";
     }else if(encounterInt == 3){
         btnsecTeamEncounter.style.display = "block";
+    }else if(encounterInt ==4){
+        btnsecGym.style.display = "block";
     }
 
     console.log("keep: "+encounterInt);
@@ -378,22 +408,31 @@ function keep(){
 function leave(){
     switch(pImg1.title){
         case "Snivy":
-            if(pImg2.title != "" || pImg3.title == ""){
+            if(encounterInt == 2){
                 pokename = "Purrloin";
                 story.innerHTML = "You stroke the creatures head gently, enthralled by its purring. It happily continues to eat before wandering off after giving you an affectionate headbutt.";
+            }else if(encounterInt == 3){
+                pokename = "Blitzle";
+                story.innerHTML = ``;
             }
             break;
 
         case "Scorbunny":
-            if(pImg2.title != "" || pImg3.title == ""){
+            if(encounterInt == 2 ){
                 pokename = "Wynaut";
+                story.innerHTML = ``;
+            }else if(encounterInt == 3){
+                pokename = "Pidove";
                 story.innerHTML = ``;
             }
             break;
 
         case "Popplio":
-            if(pImg2.title != "" || pImg3.title == ""){
+            if(encounterInt == 2){
                 pokename = "Wynaut";
+                story.innerHTML = ``;
+            }else if(encounterInt == 4){
+                pokename = "Dirlbur";
                 story.innerHTML = ``;
             }
             break;
@@ -401,13 +440,15 @@ function leave(){
 
     btnKeep.style.display = "none";
     btnLeave.style.display = "none";
-    h1.innerHTML = "Insert text here";
+    h1.innerHTML = "You left "+ pokename;
     story.append("You left "+ pokename);
 
     if(encounterInt == 2){
         btnfirstGym.style.display = "block";
     }else if(encounterInt == 3){
         btnsecTeamEncounter.style.display = "block";
+    }else if(encounterInt == 4){
+        btnsecGym.style.display = "block";
     }
 
     console.log("leave: "+encounterInt);
@@ -432,12 +473,13 @@ function showTxtAndChangeBackground(color){
     btnthirEncounter.style.backgroundColor = color;
     btnfirstGym.style.backgroundColor = color;
     btnsecGym.style.backgroundColor = color;
-    btnroute2.style.backgroundColor = color;
     btnsecTeamEncounter.style.backgroundColor = color;
+    btnpopEncounter.style.backgroundColor = color;
     btnFirstEncounter.style.display = "none";
     btnfirstTeamEncounter.style.display = "none";
     btnsecEncounter.style.display = "none";
     btnthirEncounter.style.display = "none";
     btnfirstGym.style.display = "none";
     btnsecGym.style.display = "none";
+    btnpopEncounter.style.display = "none"
 }
