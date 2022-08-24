@@ -133,7 +133,7 @@ function firstEncounter(){
         case "Snivy":
             pokename = "Lillipup";
             routeImg.src = `assets/Snivy/lillipup.png`;
-            story.innerHTML = `While walking along route 1 you hear a rambunctious barking. A Lillipup runs out in front of you, causing you to fall backwards. The Lillipup continues to run around, barking, before running up to your face. It’s a little ball of energy and seems to be concerned that you’re on the ground. You pet the dog Pokémon and slowly raise from the ground. The pup circles you, barking, making you smile. It seems to want to go with you. You smile, presenting a poke-ball to the little fella. It boops it with his nose, disappearing into the ball. Lillipup joins your team!`;
+            story.innerHTML = `While walking along route 1 you hear a rambunctious barking. A Lillipup runs out in front of you, causing you to fall backwards. The Lillipup continues to run around, barking, before running up to your face. It’s a little ball of energy and seems to be concerned that you’re on the ground. You pet the pup Pokémon and slowly raise from the ground. The pup circles you, barking, making you smile. It seems to want to go with you. You smile, presenting a poke-ball to the little fella. It boops it with his nose, disappearing into the ball. Lillipup joins your team!`;
 
             pImg2.src = `assets/Snivy/lillipuppixel.png`;
             pImg2.title = "Lillipup";
@@ -175,10 +175,10 @@ function firstGym(){
         case "Snivy":
             routeImg.src = `assets/Snivy/SnivyGym1.png`;
             if(pImg3.title == ""){
-                story.innerHTML = "After training for several days, it’s finally time! You approach your first gym, giddy with nervous excitement. Your snivy walks by your side, ever the loyal friend. You take a deep breath and open the door. Inside you are greeted by three guys and their partner pokemon. This is it. The red head steps forward and introduces himself as Chilli. He will be your opponent. Here goes nothing!";
+                story.innerHTML = "After training for several days, it’s finally time! You approach your first gym, giddy with nervous excitement. Your Snivy walks by your side, ever the loyal friend. You take a deep breath and open the door. Inside you are greeted by three trainers and their partner pokemon. This is it. The red head steps forward and introduces himself as Chilli. He will be your opponent. Here goes nothing!";
                 
             }else if(pImg3.title != ""){
-                story.innerHTML = "only 3 pokemon";
+                story.innerHTML = "After training for several days, it’s finally time! You approach your first gym, giddy with nervous excitement. Your Snivy walks by your side, ever the loyal friend. You take a deep breath and open the door. Inside you are greeted by three trainers and their partner pokemon. This is it. The red head steps forward and introduces himself as Chilli. He will be your opponent. Here goes nothing!";
             }
             break;
 
@@ -224,7 +224,7 @@ function secGym(){
 
     switch(pImg1.title){
         case "Snivy":
-            routeImg.src = `assets/Snivy/.png`;
+            routeImg.src = `assets/gym2.png`;
             if(pImg3.title == ""){
                 story.innerHTML = "only 2 pokemon";
             }else if(pImg4.title == "" && pImg3.title != ""){
@@ -235,7 +235,7 @@ function secGym(){
             break;
 
         case "Scorbunny":
-            routeImg.src = `assets/Scorbunny/.png`;
+            routeImg.src = `assets/gym2.png`;
             if(pImg4.title == ""){
                 story.innerHTML = "only 3 pokemon";
                 
@@ -245,7 +245,7 @@ function secGym(){
             break;
 
         case "Popplio":
-            routeImg.src = `assets/Popplio/.png`;
+            routeImg.src = `assets/gym2.png`;
             if(pImg4.title == ""){
                 story.innerHTML = "only 3 pokemon";
                 
@@ -305,8 +305,8 @@ function encounters(encounterNum){
                 btnthirEncounter.style.display = "none"
                 encounterInt = 3;
             }else if(encounterNum == 4){
-                pokename = "Dirlbur";
-                routeImg.src = `assets/Popplio/dirlbur.png`;
+                pokename = "Drilbur";
+                routeImg.src = `assets/Popplio/drilbur.png`;
                 story.innerHTML = ``;
                 btnpopEncounter.style.display = "none"
                 encounterInt = 4;
@@ -332,7 +332,7 @@ function keep(){
                 pokename = "Purrloin";
                 pImg3.src = `assets/Snivy/purloinpixel.png`;
                 pImg3.title = pokename;
-                story.innerHTML = `You slowly pull out a poke ball and offer it to the purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal`;
+                story.innerHTML = `You slowly pull out a poke ball and offer it to the Purrloin. It is hesitant but slowly boops the ball with its nose. It disappears in a flash of red, quickly reappearing as you let it out to continue its meal. `;
 
             }else if(pImg3.title == "" && encounterInt == 3){
                 pokename = "Blitzle";
@@ -362,7 +362,7 @@ function keep(){
 
             }else if(pImg3 != "" && encounterInt == 3){
                 pokename = "Pidove";
-                pImg4.src = `assets/Snivy/pidovepixel.png`;
+                pImg4.src = `assets/Scorbunny/pidovepixel.png`;
                 pImg4.title = pokename;
                 story.innerHTML = ``;
             }
@@ -375,14 +375,14 @@ function keep(){
                 pImg3.title = "Wynaut";
                 story.innerHTML = ``;
             }else if(pImg3.title == "" && encounterInt == 4){
-                pokename = "Dirlbur";
-                pImg3.src = `assets/Scorbunny/dirlburpixel.png`;
+                pokename = "Drilbur";
+                pImg3.src = `assets/Popplio/drilburpixel.png`;
                 story.innerHTML = ``;
                 pImg3.title = pokename;
 
             }else if(pImg3 != "" && encounterInt == 4){
-                pokename = "Dirlbur";
-                pImg4.src = `assets/Snivy/dirlburpixel.png`;
+                pokename = "Drilbur";
+                pImg4.src = `assets/Popplio/drilburpixel.png`;
                 pImg4.title = pokename;
                 story.innerHTML = ``;
             }
@@ -432,7 +432,7 @@ function leave(){
                 pokename = "Wynaut";
                 story.innerHTML = ``;
             }else if(encounterInt == 4){
-                pokename = "Dirlbur";
+                pokename = "Drilbur";
                 story.innerHTML = ``;
             }
             break;
@@ -440,8 +440,8 @@ function leave(){
 
     btnKeep.style.display = "none";
     btnLeave.style.display = "none";
-    h1.innerHTML = "You left "+ pokename;
-    story.append("You left "+ pokename);
+    h1.innerHTML = " You left "+ pokename;
+    story.append(" You left "+ pokename);
 
     if(encounterInt == 2){
         btnfirstGym.style.display = "block";
